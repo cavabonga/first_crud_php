@@ -18,24 +18,24 @@
                 $result = mysqli_query($connection, $query);
 
                 if(!$result){
-                    die('query failed'.mysqli_error());
+                    die("query failed".mysqli_error());
                 } else{
-                    print_r($result);
+
+                    while($row = mysqli_fetch_assoc($result)){
+                        ?>
+
+                        <tr>
+                            <td><?php echo $row['id'] ?></td>
+                            <td><?php echo $row['first_name'] ?></td>
+                            <td><?php echo $row['last_name'] ?></td>
+                            <td><?php echo $row['age'] ?></td>
+                        </tr>
+                        <?php
+                    }
                 }
             ?>
 
-            <tr>
-                <th>3</th>
-                <th>Adrian</th>
-                <th>Siara</th>
-                <th>31</th>
-            </tr>
-            <tr>
-                <th>5</th>
-                <th>James</th>
-                <th>Tarkowski</th>
-                <th>37</th>
-            </tr>
+
         </tbody>
     </table>
 

@@ -10,7 +10,7 @@
     if(!$connection){
         die("Connection Failed");
     } else{
-        echo "Successfully connected";
+        //echo "Successfully connected";
     }
 
 ?>
